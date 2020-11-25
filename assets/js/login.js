@@ -63,7 +63,7 @@ $(function () {
                 if(res.status !==0) {
                     return layer.msg(res.message)
                 }
-                location.href="/Users/russellli/web_bigevent-first/index.html"
+                location.href="/index.html"
                 layer.msg(res.message)
             }
         })
