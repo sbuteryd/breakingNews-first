@@ -9,7 +9,7 @@ $.ajaxPrefilter(function( options, originalOptions, jqXHR ) {
     }
      options.complete=function (res) {
         console.log('complete re',res)
-        //不伦成功失败都会调用这个函数
+        //不伦成功失败都会调用这个函数 !
         if(res.responseJSON.status === 1 ){
             localStorage.removeItem('token')
             location.href ='/web_bigevent-first/login.html'
