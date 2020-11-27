@@ -65,7 +65,7 @@ $(function () {
                 }
                 layer.msg(res.message)
                 localStorage.setItem('token',res.token)
-                location.href="/web_bigevent-first/index.html"
+                location.href="./index.html"
             }
         })
     })

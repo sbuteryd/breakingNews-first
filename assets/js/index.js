@@ -4,7 +4,7 @@ $(function () {
     $('.btn-out').click(function (){
         layer.confirm('是否退出?', {icon: 3, title:'提示'}, function(index){
             localStorage.removeItem('token')
-            location.href ='/web_bigevent-first/login.html'
+            location.href ='./login.html'
             layer.close(index);
         });
 
@@ -14,7 +14,6 @@ $(function () {
 
 //获取用户信息
 function getUserInfo(){
-    console.log('index')
     $.ajax({
         method:'GET',
         url:'/my/userinfo',
@@ -27,7 +26,7 @@ function getUserInfo(){
             }
             //渲染用户头像
             handleAvatar(res.data)
-           layer.msg(res.message)
+            layer.msg(res.message)
         }
 
     })
