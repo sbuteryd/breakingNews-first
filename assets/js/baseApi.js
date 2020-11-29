@@ -9,8 +9,8 @@ $.ajaxPrefilter(function( options, originalOptions, jqXHR ) {
     }
      options.complete=function (res) {
          //不伦成功失败都会调用这个函数 !
-         console.log(res);
-        if(res.responseJSON.status !== 0 && res.responseJSON.message ==="身份认证失败！"){
+       
+        if(res.responseJSON.status !== 0 && res.responseJSON.message === "身份认证失败！"){
             localStorage.removeItem('token')
             location.href ='./login.html'
         }
