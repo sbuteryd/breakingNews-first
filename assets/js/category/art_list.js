@@ -1,5 +1,6 @@
 
 $(function(){
+  var form = layui.form
 
   // 定义美化时间的过滤器
   template.defaults.imports.dataFormat = function(date) {
@@ -40,6 +41,7 @@ $(function(){
     
        getArtList()
        initCate()
+      //  获取分类列表
        function getArtList(){
         $.ajax({
           type: "get",
@@ -55,6 +57,7 @@ $(function(){
           }
         });
       }
+      // 获取分类
       function initCate(){
         $.ajax({
           type: "get",
@@ -64,11 +67,20 @@ $(function(){
               return layer.msg('获取分类失败')
             }
             let strHtml = template('tpl-cate',res)
-            // $('[name=cate_id]').html(strHtml)
-            console.log(strHtml);
-          }
+            $('[name=cate_id]').html(strHtml)
+            form.render()
+           }
         });
       }
+      // 为筛选表单绑定submit 时间
+      $('#form-search').on('submit',function(e){
+          e.preventDefault()
+          let cate_id =$('[name=cate_id]').val()
+          let state = $('[name="state"]').val()
+          initData.cate_id = cate_id
+          initData.state = state
+          getArtList()
+      })
 })
 
 
