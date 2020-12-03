@@ -1,0 +1,21 @@
+
+.art_cate_body{
+    padding:  30px;
+    background-color: #f2f3f5;
+ }
+/*表单宽度*/
+ 
+
+.header-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  
+}
+ 
+ 
+.header-wrapper {
+    border-bottom: 1px solid #eee;
+}
+ 
+ 
